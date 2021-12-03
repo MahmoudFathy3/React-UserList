@@ -1,0 +1,31 @@
+.userBtn button{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin: 0px auto 30px;
+    background: #009688;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filterName input{
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #AAA;
+    outline: none;
+    margin-bottom: 30px;
+    border-radius: 6px;
+
+}
+.filterName input:focus::placeholder{
+    opacity: 0;
+}
+.filterName input::placeholder {
+    opacity: 1;
+}

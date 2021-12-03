@@ -1,0 +1,46 @@
+.userBox {
+    color: #FFF;
+    width: 40%;
+    margin: 0 auto 20px;
+    text-align: left;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 7px;
+}
+
+.userBox h2, 
+.userBox span,
+.userBox p {
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.boy{
+    background-color: #2196f3;
+}
+.girl{
+    background-color: brown;
+}
+
+
+.userBox .delBtn{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 10px 13px;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 50%;
+    color: #FFF;
+    cursor: pointer;
+    user-select: none;
+}
+
+.hide{
+    display: none;
+}

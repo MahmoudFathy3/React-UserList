@@ -1,0 +1,8 @@
+.filterName input{
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #AAA;
+    outline: none;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
