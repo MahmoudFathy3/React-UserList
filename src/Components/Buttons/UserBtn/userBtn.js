@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Filter from "../../Filter/Filter";
 import styles from "./userBtn.module.css";
 
-const userBtn = ({ showToggle, show, FilterHandler }) => {
+const UserBtn = ({ showToggle, show, FilterNames }) => {
   return (
     <Fragment>
       <div className={styles.userBtn}>
@@ -10,9 +10,9 @@ const userBtn = ({ showToggle, show, FilterHandler }) => {
           show ? "Hide Items" : "Show Items"
         }`}</button>
       </div>
-      <Filter FilterNames={FilterHandler} />
+      <Filter FilterNames={FilterNames} />
     </Fragment>
   );
 };
 
-export default userBtn;
+export default UserBtn;

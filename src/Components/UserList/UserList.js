@@ -45,15 +45,15 @@ const UserList = () => {
     },
   ]);
 
-  const FilterHandler = (name) => {
+  const FilterNames = (name) => {
     setFilter(name);
   };
 
-  const NamesHandler = (item) => {
+  const NamesHandler = () => {
     if (filter.length !== 0) {
       return state.filter((el) => el.name.includes(filter));
     }
-    return item;
+    return state;
   };
 
   const showToggle = () => {
@@ -66,22 +66,10 @@ const UserList = () => {
     });
   };
 
-  const ItemList = state.map(({ ...item }) => {
-    return (
-      <Fragment key={item.id}>
-        <User items={NamesHandler(item)} DelHandler={DelHandler} show={show} />
-      </Fragment>
-    );
-  });
-
   return (
     <div className={styles.UserList}>
-      <UserBtn
-        showToggle={showToggle}
-        show={show}
-        FilterHandler={FilterHandler}
-      />
-      {ItemList}
+      <UserBtn showToggle={showToggle} show={show} FilterNames={FilterNames} />
+      <User items={NamesHandler()} DelHandler={DelHandler} show={show} />
     </div>
   );
 };

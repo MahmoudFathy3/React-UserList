@@ -1,3 +1,4 @@
+
 .filterName input{
     width: 350px;
     padding: 10px;
@@ -5,4 +6,11 @@
     outline: none;
     margin-bottom: 30px;
     border-radius: 6px;
+
+}
+.filterName input:focus::placeholder{
+    opacity: 0;
+}
+.filterName input::placeholder {
+    opacity: 1;
 }
