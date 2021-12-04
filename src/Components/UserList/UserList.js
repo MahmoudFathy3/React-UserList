@@ -49,11 +49,11 @@ const UserList = () => {
     setFilter(name);
   };
 
-  const NamesHandler = () => {
+  const NamesHandler = (item) => {
     if (filter.length !== 0) {
       return state.filter((el) => el.name.includes(filter));
     }
-    return state;
+    return item;
   };
 
   const showToggle = () => {
@@ -69,7 +69,7 @@ const UserList = () => {
   const ItemList = state.map(({ ...item }) => {
     return (
       <Fragment key={item.id}>
-        <User items={NamesHandler()} DelHandler={DelHandler} show={show} />
+        <User items={NamesHandler(item)} DelHandler={DelHandler} show={show} />
       </Fragment>
     );
   });
