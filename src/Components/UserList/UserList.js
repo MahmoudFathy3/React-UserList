@@ -1,7 +1,8 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import User from "./User";
 import styles from "./UserList.module.css";
 import UserBtn from "../Buttons/UserBtn/userBtn";
+import Login from "../Login/Login";
 
 const UserList = () => {
   const [filter, setFilter] = useState("");
@@ -11,7 +12,7 @@ const UserList = () => {
       id: Math.floor(Math.random() * 100),
       name: "Mahmoud",
       age: 24,
-      phone: 1110234902,
+      phone: `01110234902`,
       city: "Cairo",
       Skill: "Front-End Developer (React.js)",
       type: "Boy",
@@ -20,7 +21,7 @@ const UserList = () => {
       id: Math.floor(Math.random() * 100),
       name: "Sara",
       age: 20,
-      phone: 1110594432,
+      phone: `01110594432`,
       city: "Cairo",
       Skill: "Software Engineer ",
       type: "Girl",
@@ -29,7 +30,7 @@ const UserList = () => {
       id: Math.floor(Math.random() * 100),
       name: "Karabwy",
       age: 30,
-      phone: 119982152,
+      phone: `0119982152`,
       city: "Cairo",
       Skill: "Full-Stack Development",
       type: "Boy",
@@ -38,12 +39,16 @@ const UserList = () => {
       id: Math.floor(Math.random() * 100),
       name: "Mirna",
       age: 19,
-      phone: 1010246102,
+      phone: `01010246102`,
       city: "Cairo",
       Skill: "Graphic Design",
       type: "Girl",
     },
   ]);
+
+  const NewAddUser = (data) => {
+    setState((PrevState) => [...PrevState, data]);
+  };
 
   const FilterNames = (name) => {
     setFilter(name);
@@ -65,12 +70,29 @@ const UserList = () => {
       return PrevState.filter((el) => el.id !== id);
     });
   };
+  const [login, setLogin] = useState(false);
+
+  const LoginHandler = () => {
+    setLogin(!login);
+  };
 
   return (
-    <div className={styles.UserList}>
-      <UserBtn showToggle={showToggle} show={show} FilterNames={FilterNames} />
-      <User items={NamesHandler()} DelHandler={DelHandler} show={show} />
-    </div>
+    <Fragment>
+      <Login
+        checkLogin={login}
+        closeModel={() => setLogin(false)}
+        NewAddUser={NewAddUser}
+      />
+      <div className={styles.UserList}>
+        <UserBtn
+          showToggle={showToggle}
+          show={show}
+          FilterNames={FilterNames}
+          LoginHandler={LoginHandler}
+        />
+        <User items={NamesHandler()} DelHandler={DelHandler} show={show} />
+      </div>
+    </Fragment>
   );
 };
 
